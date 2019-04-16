@@ -1,0 +1,7 @@
+POST /MarketSourceGeneralAgency/1.0.0/Contract/GeneralAgencyMarketSource  HTTP/1.1
+
+{
+    "SystemAssignNumber": 1317224,
+    "NationalProducerNumber": 0,
+    "TaxNumber": 923017669
+}

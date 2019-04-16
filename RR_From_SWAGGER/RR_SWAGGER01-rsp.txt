@@ -1,0 +1,3 @@
+HTTP/1.1 200
+
+{"GetGeneralAgencyMarketSourceResponse":{"MarketSourceInfo":{"MarketSourceNumber":13,"MarketSourceDescription":"WEXP"},"ServiceError":{"ErrorCode":0,"ErrorDescription":"Success."}}}
