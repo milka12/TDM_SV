@@ -1,0 +1,137 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Market Source General Agency API"
+  },
+  "host": "ps-api.humana.com",
+  "basePath": "/MarketSourceGeneralAgency/1.0.0",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/Contract/GeneralAgencyMarketSource": {
+      "post": {
+        "tags": [
+          "MarketSourceGeneralAgency"
+        ],
+        "summary": "Get General Agency Market Source",
+        "description": "This operation is used to get market source information for market source general agency.",
+        "operationId": "MarketSourceGeneralAgency_GetGeneralAgencyMarketSource",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "description": "GetGeneralAgencyMarketSourceRequest",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GetGeneralAgencyMarketSourceRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "GetGeneralAgencyMarketSourceResponse": {
+                  "MarketSourceInfo": {
+                    "MarketSourceNumber": 13,
+                    "MarketSourceDescription": "WEXP"
+                  },
+                  "ServiceError": {
+                    "ErrorCode": 0,
+                    "ErrorDescription": "Success."
+                  }
+                }
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/GetGeneralAgencyMarketSourceResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "GetGeneralAgencyMarketSourceRequest": {
+      "type": "object",
+      "properties": {
+        "SystemAssignNumber": {
+          "format": "int32",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7,
+          "example": 1228977
+        },
+        "NationalProducerNumber": {
+          "format": "int32",
+          "type": "integer",
+          "example": 1186787
+        },
+        "TaxNumber": {
+          "format": "int32",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9,
+          "example": 933868361
+        }
+      },
+      "example": {
+        "SystemAssignNumber": 1317224,
+        "NationalProducerNumber": 0,
+        "TaxNumber": 923017669
+      }
+    },
+    "GetGeneralAgencyMarketSourceResponse": {
+      "type": "object",
+      "properties": {
+        "MarketSourceInfo": {
+          "$ref": "#/definitions/MarketSourceInfo"
+        },
+        "ServiceError": {
+          "$ref": "#/definitions/ServiceError"
+        }
+      }
+    },
+    "MarketSourceInfo": {
+      "type": "object",
+      "properties": {
+        "MarketSourceNumber": {
+          "format": "int32",
+          "type": "integer",
+          "example": 78
+        },
+        "MarketSourceDescription": {
+          "type": "string",
+          "example": "VLIC"
+        }
+      }
+    },
+    "ServiceError": {
+      "type": "object",
+      "properties": {
+        "ErrorCode": {
+          "format": "int32",
+          "type": "integer",
+          "example": 0
+        },
+        "ErrorDescription": {
+          "type": "string",
+          "example": "SUCCESS"
+        }
+      }
+    }
+  }
+}
